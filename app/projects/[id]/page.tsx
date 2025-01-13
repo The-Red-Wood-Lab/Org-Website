@@ -1,10 +1,10 @@
-'use client'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import NavBar from '@/components/nav-bar'
 import Footer from '@/components/footer'
+import { Metadata } from 'next'
 
 // This would typically come from a database or API
 const projects = [
@@ -23,7 +23,15 @@ const projects = [
   // ... other projects
 ]
 
-export default function ProjectPage({ params }: { params: { id: string } }) {
+type Params = { id: string }
+
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+  return {
+    title: `Project ${params.id}`,
+  }
+}
+
+export default async function ProjectPage({ params }: { params: Params }) {
   const project = projects.find(p => p.id === params.id)
 
   if (!project) {
