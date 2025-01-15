@@ -67,6 +67,24 @@ export default function Home() {
     <main className="min-h-screen flex flex-col">
       <NavBar />
       <div className="flex-1 max-w-7xl mx-auto px-4 py-12">
+        <section className="hero-section text-center py-20 bg-black text-white">
+          <h1 className="text-6xl font-bold mb-4">Welcome to [Org Name]</h1>
+          <p className="text-2xl">Embrace the Skeleton/Horror Theme</p>
+        </section>
+        <section className="overview-section text-center py-12">
+          <p className="text-xl mb-4">We specialize in cutting-edge technology with a skeleton-inspired twist!</p>
+          <p className="text-lg">Founded in June, 2024, we bring creative tech solutions to life.</p>
+        </section>
+        <section className="tech-stack-section text-center py-12">
+          <h2 className="text-4xl font-bold mb-6">Our Tech Stack</h2>
+          <div className="flex justify-center space-x-8">
+            <img src="/html5-logo.png" alt="HTML5" className="w-16 h-16" />
+            <img src="/css3-logo.png" alt="CSS3" className="w-16 h-16" />
+            <img src="/js-logo.png" alt="JavaScript" className="w-16 h-16" />
+            <img src="/react-logo.png" alt="React.js" className="w-16 h-16" />
+            <img src="/nextjs-logo.png" alt="Next.js" className="w-16 h-16" />
+          </div>
+        </section>
         <h1 className="text-5xl font-bold text-center mb-12">PROJECTS</h1>
         <div className="space-y-8">
           {allProjects.slice(0, displayedProjects).map((project) => (
@@ -81,4 +99,3 @@ export default function Home() {
     </main>
   )
 }
-
