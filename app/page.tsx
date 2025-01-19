@@ -61,6 +61,7 @@ const stats = [
   },
 ]
 
+
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-black text-white">
@@ -177,4 +178,3 @@ export default function Home() {
     </div>
   )
 }
-
