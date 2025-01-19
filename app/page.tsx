@@ -1,175 +1,103 @@
-"use client";
-
 import NavBar from '@/components/nav-bar'
 import Footer from '@/components/footer'
 import Link from 'next/link'
-import { Code, Users, Rocket, Github, Globe, Trophy, Star, GitFork, GitPullRequest, ArrowRight } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-
-const featuredProjects = [
-  {
-    id: "1",
-    title: "Open Source Library",
-    description: "A powerful library for data processing and visualization.",
-    icon: <Code className="w-10 h-10 text-purple-500" />,
-    githubLink: "https://github.com/redwoodlabs/open-source-library",
-    liveLink: "https://open-source-library-demo.redwoodlabs.org",
-    tags: ["Data Processing", "Visualization"],
-  },
-  {
-    id: "2",
-    title: "AI-Powered Analytics",
-    description: "Machine learning model for predictive analytics in business.",
-    icon: <Rocket className="w-10 h-10 text-purple-500" />,
-    githubLink: "https://github.com/redwoodlabs/ai-powered-analytics",
-    liveLink: "https://ai-analytics-demo.redwoodlabs.org",
-    tags: ["AI", "Analytics", "Machine Learning"],
-  },
-  {
-    id: "3",
-    title: "Community Forum",
-    description: "A platform for developers to connect, share, and learn.",
-    icon: <Users className="w-10 h-10 text-purple-500" />,
-    githubLink: "https://github.com/redwoodlabs/community-forum",
-    liveLink: "https://community-forum.redwoodlabs.org",
-    tags: ["Community", "Forum", "Collaboration"],
-  },
-]
-
-const stats = [
-  {
-    icon: <Trophy className="w-8 h-8 text-purple-500" />,
-    value: "50+",
-    label: "Open Source Projects",
-  },
-  {
-    icon: <Star className="w-8 h-8 text-purple-500" />,
-    value: "10,000+",
-    label: "GitHub Stars",
-  },
-  {
-    icon: <GitFork className="w-8 h-8 text-purple-500" />,
-    value: "2,000+",
-    label: "Forks",
-  },
-  {
-    icon: <GitPullRequest className="w-8 h-8 text-purple-500" />,
-    value: "5,000+",
-    label: "Pull Requests Merged",
-  },
-]
-
+import { RetroBinaryBackground, RetroGrid, RetroCursor } from '@/components/retro-decorations'
+import { Code, Cpu, Network, Zap, Users } from 'lucide-react'
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-black text-white">
+    <div className="min-h-screen flex flex-col relative overflow-hidden bg-white">
+      <RetroBinaryBackground />
+      <RetroGrid />
+      <RetroCursor />
       <NavBar />
       <main className="flex-grow">
-        <div className="max-w-7xl mx-auto px-4 py-12">
-          {/* Featured Projects Section */}
-          <h1 className="text-5xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500 animate-gradient">Featured Projects</h1>
-          <div className="grid md:grid-cols-3 gap-8 mb-20">
-            {featuredProjects.map((project) => (
-              <Card key={project.id} className="bg-gray-900 border-gray-800 hover:border-purple-500 transition-all duration-300 overflow-hidden group">
-                <CardHeader className="border-b border-gray-800 bg-gradient-to-br from-gray-800 to-gray-900">
-                  <div className="flex items-center space-x-4">
-                    <div className="p-2 rounded-full bg-purple-500/10 group-hover:bg-purple-500/20 transition-colors">
-                      {project.icon}
-                    </div>
-                    <CardTitle className="text-xl font-semibold text-white">{project.title}</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent className="p-6">
-                  <p className="text-gray-400 mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tags.map((tag, index) => (
-                      <Badge key={index} variant="secondary" className="bg-purple-500/10 text-purple-300 hover:bg-purple-500/20">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-                <CardFooter className="bg-gray-900/50 border-t border-gray-800 p-4 flex justify-between items-center">
-                  <Link href={`/projects/${project.id}`} className="text-purple-500 hover:text-purple-400 transition-colors flex items-center">
-                    Learn More <ArrowRight className="ml-2 w-4 h-4" />
-                  </Link>
-                  <div className="flex space-x-2">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="bg-white hover:bg-gray-700 border-gray-700"
-                      onClick={() => window.open(project.githubLink, '_blank')}
-                    >
-                      <Github className="w-4 h-4 mr-2" />
-                      Repo
-                    </Button>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="bg-white hover:bg-gray-700 border-gray-700"
-                      onClick={() => window.open(project.liveLink, '_blank')}
-                    >
-                      <Globe className="w-4 h-4 mr-2" />
-                      Live
-                    </Button>
-                  </div>
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
-
-          {/* Stats Section */}
-          <div className="py-16 border-t border-gray-800">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-              {stats.map((stat, index) => (
-                <div
-                  key={index}
-                  className="text-center p-6 rounded-lg bg-gradient-to-br from-gray-900 to-black border border-gray-800 hover:border-purple-500 transition-all duration-300 group"
-                >
-                  <div className="flex justify-center mb-4">
-                    <div className="p-3 rounded-lg bg-purple-500/10 group-hover:bg-purple-500/20 transition-colors">
-                      {stat.icon}
-                    </div>
-                  </div>
-                  <div className="text-3xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">
-                    {stat.value}
-                  </div>
-                  <div className="text-gray-400">{stat.label}</div>
-                </div>
-              ))}
+        <div className="retro-container">
+          <div className="text-center mb-12">
+            <h1 className="retro-title text-6xl mb-4">RED WOOD LABS</h1>
+            <p className="retro-text text-2xl mb-8">CODING THE FUTURE, INSPIRED BY THE PAST</p>
+            <div className="flex justify-center space-x-4">
+              <Link href="/projects">
+                <button className="retro-button">EXPLORE PROJECTS</button>
+              </Link>
+              <Link href="/join-us">
+                <button className="retro-button">JOIN US</button>
+              </Link>
             </div>
           </div>
-
-          {/* CTA Section */}
-          <div className="py-16 text-center border-t border-gray-800">
-            <div className="max-w-3xl mx-auto px-4">
-              <h2 className="text-4xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500 animate-gradient">
-                Ready to Contribute to Open Source?
-              </h2>
-              <p className="text-xl text-gray-400 mb-8">
-                Join Red Wood Labs in building innovative open-source solutions that push the boundaries of what&apos;s possible in technology.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/projects">
-                  <Button
-                    size="lg"
-                    className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold transition-all duration-300 hover:scale-105"
-                  >
-                    Explore Projects
-                  </Button>
-                </Link>
-                <Link href="/join-us">
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="w-full sm:w-auto border-purple-500 text-purple-500 hover:bg-purple-300"
-                  >
-                    Join Our Community
-                  </Button>
+          
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <div className="retro-box">
+              <h2 className="retro-subtitle mb-4">FEATURED PROJECT</h2>
+              <div className="flex items-start mb-4">
+                <Code className="w-8 h-8 mr-4" />
+                <div>
+                  <h3 className="font-bold mb-2">RETRO CODE EDITOR</h3>
+                  <p className="retro-text">
+                    Experience the nostalgia of coding on old-school terminals with modern features.
+                  </p>
+                </div>
+              </div>
+              <div className="flex justify-end">
+                <Link href="/projects/1">
+                  <button className="retro-button">VIEW PROJECT</button>
                 </Link>
               </div>
+            </div>
+            <div className="retro-box">
+              <h2 className="retro-subtitle mb-4">LATEST NEWS</h2>
+              <ul className="retro-text space-y-2 mb-4">
+                <li className="flex items-center">
+                  <Zap className="w-4 h-4 mr-2" />
+                  <span>New Retro UI Kit Released</span>
+                </li>
+                <li className="flex items-center">
+                  <Users className="w-4 h-4 mr-2" />
+                  <span>Upcoming Hackathon: 8-bit Challenge</span>
+                </li>
+                <li className="flex items-center">
+                  <Cpu className="w-4 h-4 mr-2" />
+                  <span>Community Spotlight: CRT Enthusiasts</span>
+                </li>
+              </ul>
+              <div className="flex justify-end">
+                <Link href="/news">
+                  <button className="retro-button">READ MORE</button>
+                </Link>
+              </div>
+            </div>
+          </div>
+          
+          <div className="retro-box mb-12">
+            <h2 className="retro-subtitle mb-6">WHY RED WOOD LABS?</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="flex flex-col items-center text-center">
+                <Zap className="w-16 h-16 mb-4" />
+                <h4 className="font-bold mb-2">INNOVATION</h4>
+                <p className="retro-text">Pushing boundaries with retro-inspired tech</p>
+              </div>
+              <div className="flex flex-col items-center text-center">
+                <Network className="w-16 h-16 mb-4" />
+                <h4 className="font-bold mb-2">COMMUNITY</h4>
+                <p className="retro-text">A vibrant network of retro-loving devs</p>
+              </div>
+              <div className="flex flex-col items-center text-center">
+                <Code className="w-16 h-16 mb-4" />
+                <h4 className="font-bold mb-2">OPEN SOURCE</h4>
+                <p className="retro-text">All our projects are free and open</p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="retro-box">
+            <h2 className="retro-subtitle mb-4">JOIN THE RETRO REVOLUTION</h2>
+            <div className="flex flex-col md:flex-row items-center justify-between">
+              <p className="retro-text mb-4 md:mb-0 md:mr-4 text-center md:text-left">
+                Ready to code like it&apos;s 1999? Join our community and start contributing today!
+              </p>
+              <Link href="/join-us">
+                <button className="retro-button">GET INVOLVED</button>
+              </Link>
             </div>
           </div>
         </div>
@@ -178,3 +106,4 @@ export default function Home() {
     </div>
   )
 }
+

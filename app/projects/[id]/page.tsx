@@ -1,177 +1,190 @@
-"use client";
-
 import { notFound } from 'next/navigation'
 import NavBar from '@/components/nav-bar'
 import Footer from '@/components/footer'
-import { Code, Rocket, Users, Database, Cloud, Lock, Github, Globe } from 'lucide-react'
 import Link from 'next/link'
-import { Button } from '@/components/ui/button'
+import Image from 'next/image'
+import { RetroBinaryBackground, RetroGrid, RetroCursor } from '@/components/retro-decorations'
+import { Github, Globe } from 'lucide-react'
 
 const projects = [
   {
     id: "1",
-    title: "Open Source Library",
-    description: "A powerful library for data processing and visualization.",
-    icon: <Code className="w-12 h-12 text-purple-500" />,
-    fullDescription: "Our Open Source Library is a comprehensive toolkit designed for efficient data processing and stunning visualizations. Built with performance and ease-of-use in mind, it empowers developers to transform complex datasets into meaningful insights with minimal effort. The library supports a wide range of data formats and offers customizable visualization components that can be easily integrated into any project.",
+    title: "RETRO CODE EDITOR",
+    description: "A code editor with the look and feel of old-school terminals.",
+    image: "/placeholder.svg?height=400&width=600",
+    fullDescription: "Our Retro Code Editor is a powerful tool that combines the nostalgia of old-school terminal interfaces with modern coding features. It's designed to provide a unique and immersive coding experience that harkens back to the early days of programming while offering the functionality developers need in today's world.",
     features: [
-      "High-performance data processing algorithms",
-      "Extensive collection of customizable charts and graphs",
-      "Support for real-time data streaming",
-      "Cross-platform compatibility",
-      "Comprehensive documentation and examples"
+      "Authentic retro terminal interface",
+      "Syntax highlighting for multiple languages",
+      "Customizable color schemes inspired by classic computer systems",
+      "Built-in retro-style file browser",
+      "Integrated retro-themed debugger"
     ],
-    technologies: ["JavaScript", "D3.js", "WebGL", "Node.js"],
-    githubLink: "https://github.com/yourusername/open-source-library",
-    liveLink: "https://open-source-library-demo.com",
+    technologies: ["Electron", "React", "Node.js", "Monaco Editor"],
+    githubLink: "https://github.com/redwoodlabs/retro-code-editor",
+    liveLink: "https://retro-code-editor-demo.redwoodlabs.org",
   },
   {
     id: "2",
-    title: "AI-Powered Analytics",
-    description: "Machine learning model for predictive analytics in business.",
-    icon: <Rocket className="w-12 h-12 text-purple-500" />,
-    fullDescription: "Our AI-Powered Analytics platform leverages cutting-edge machine learning algorithms to provide businesses with accurate predictive insights. By analyzing historical data and identifying patterns, the system can forecast trends, predict customer behavior, and optimize business processes. This powerful tool enables data-driven decision-making, helping organizations stay ahead in today's competitive landscape.",
+    title: "8-BIT DATA VISUALIZER",
+    description: "Turn complex data into simple, nostalgic 8-bit graphics.",
+    image: "/placeholder.svg?height=400&width=600",
+    fullDescription: "Our 8-Bit Data Visualizer is a unique tool that transforms complex datasets into charming, nostalgic 8-bit style graphics. It's perfect for making data more approachable and engaging, especially for presentations or educational purposes.",
     features: [
-      "Advanced machine learning models for accurate predictions",
-      "Intuitive dashboard for easy data visualization",
-      "Automated report generation",
-      "Integration with popular business intelligence tools",
-      "Scalable architecture to handle large datasets"
+      "Convert various data formats into 8-bit style visualizations",
+      "Multiple chart types: bar graphs, pie charts, line graphs",
+      "Customizable color palettes inspired by classic 8-bit systems",
+      "Export options for images and animated GIFs",
+      "API for integration with other data tools"
     ],
-    technologies: ["Python", "TensorFlow", "PyTorch", "Apache Spark", "Docker"],
-    githubLink: "https://github.com/yourusername/ai-powered-analytics",
-    liveLink: "https://ai-analytics-demo.com",
+    technologies: ["JavaScript", "D3.js", "Canvas API", "Node.js"],
+    githubLink: "https://github.com/redwoodlabs/8bit-data-viz",
+    liveLink: "https://8bit-data-viz-demo.redwoodlabs.org",
   },
   {
     id: "3",
-    title: "Community Forum",
-    description: "A platform for developers to connect, share, and learn.",
-    icon: <Users className="w-12 h-12 text-purple-500" />,
-    fullDescription: "Our Community Forum is a vibrant platform designed to foster collaboration and knowledge sharing among developers. With features like topic-based discussions, code sharing, and mentorship programs, it creates an environment where developers of all skill levels can learn, grow, and connect with like-minded individuals. The platform also includes gamification elements to encourage active participation and recognize valuable contributions.",
+    title: "SYNTHWAVE CSS FRAMEWORK",
+    description: "A CSS framework to give your web projects that 80s synthwave look.",
+    image: "/placeholder.svg?height=400&width=600",
+    fullDescription: "Our Synthwave CSS Framework allows developers to easily create websites with the iconic 80s synthwave aesthetic. It provides a set of pre-designed components and utilities that capture the essence of neon lights, grid landscapes, and retro-futuristic vibes.",
     features: [
-      "Topic-based discussion boards",
-      "Code snippet sharing with syntax highlighting",
-      "User profiles and reputation system",
-      "Integrated code editor for live demonstrations",
-      "Mentorship matching program"
+      "Ready-to-use UI components with synthwave styling",
+      "Customizable color schemes and gradients",
+      "Responsive grid system for easy layouts",
+      "Animation utilities for creating dynamic effects",
+      "Typography styles inspired by 80s digital displays"
     ],
-    technologies: ["React", "Node.js", "MongoDB", "Socket.io", "Redis"],
-    githubLink: "https://github.com/yourusername/community-forum",
-    liveLink: "https://community-forum-demo.com",
+    technologies: ["CSS", "Sass", "PostCSS", "JavaScript"],
+    githubLink: "https://github.com/redwoodlabs/synthwave-css",
+    liveLink: "https://synthwave-css-demo.redwoodlabs.org",
   },
   {
     id: "4",
-    title: "Data Pipeline Framework",
-    description: "Scalable data processing and ETL solution for big data.",
-    icon: <Database className="w-12 h-12 text-purple-500" />,
-    fullDescription: "Our Data Pipeline Framework is a robust solution for building scalable and efficient data processing workflows. It simplifies the process of extracting, transforming, and loading (ETL) large volumes of data from various sources. With support for both batch and stream processing, the framework enables organizations to handle big data with ease, ensuring data integrity and timely insights.",
+    title: "FLOPPY DISK BACKUP TOOL",
+    description: "Backup your data to virtual floppy disks, just for fun!",
+    image: "/placeholder.svg?height=400&width=600",
+    fullDescription: "Our Floppy Disk Backup Tool is a novelty application that allows users to backup their data to virtual floppy disks. It's a fun way to organize and store files while reliving the nostalgia of the floppy disk era.",
     features: [
-      "Modular architecture for customizable data flows",
-      "Support for both batch and stream processing",
-      "Built-in connectors for popular data sources and sinks",
-      "Fault-tolerance and data recovery mechanisms",
-      "Monitoring and alerting system for pipeline health"
+      "Create and manage virtual floppy disks",
+      "Realistic floppy disk UI and sounds",
+      "File compression to fit more data on each 'disk'",
+      "Disk labeling and cataloging system",
+      "Integration with cloud storage for real backups"
     ],
-    technologies: ["Apache Kafka", "Apache Flink", "Hadoop", "Scala", "Akka"],
-    githubLink: "https://github.com/yourusername/data-pipeline-framework",
-    liveLink: "https://data-pipeline-demo.com",
+    technologies: ["Electron", "React", "Node.js", "SQLite"],
+    githubLink: "https://github.com/redwoodlabs/floppy-backup",
+    liveLink: "https://floppy-backup-demo.redwoodlabs.org",
   },
   {
     id: "5",
-    title: "Cloud Infrastructure Manager",
-    description: "Automated cloud resource provisioning and management tool.",
-    icon: <Cloud className="w-12 h-12 text-purple-500" />,
-    fullDescription: "Our Cloud Infrastructure Manager is a comprehensive tool for automating the provisioning and management of cloud resources across multiple providers. It offers a unified interface for deploying, scaling, and monitoring cloud infrastructure, enabling organizations to optimize their cloud operations and reduce costs. With features like infrastructure-as-code and policy enforcement, it ensures consistency and compliance in cloud environments.",
+    title: "ASCII ART GENERATOR",
+    description: "Convert images into ASCII art for that true retro feel.",
+    image: "/placeholder.svg?height=400&width=600",
+    fullDescription: "Our ASCII Art Generator is a powerful tool that converts images into beautiful ASCII art. It's perfect for creating unique visual content for text-based interfaces, retro-style websites, or just for fun.",
     features: [
-      "Multi-cloud support (AWS, Azure, Google Cloud)",
-      "Infrastructure-as-Code templates",
-      "Automated scaling and load balancing",
-      "Cost optimization recommendations",
-      "Compliance and security policy enforcement"
+      "Convert images to ASCII art with adjustable resolution",
+      "Multiple character sets for different styles",
+      "Color and monochrome output options",
+      "Ability to generate animated ASCII art from GIFs",
+      "Web API for easy integration into other applications"
     ],
-    technologies: ["Terraform", "Ansible", "Kubernetes", "Go", "Prometheus"],
-    githubLink: "https://github.com/yourusername/cloud-infrastructure-manager",
-    liveLink: "https://cloud-manager-demo.com",
+    technologies: ["Python", "Pillow", "Flask", "JavaScript"],
+    githubLink: "https://github.com/redwoodlabs/ascii-art-gen",
+    liveLink: "https://ascii-art-gen-demo.redwoodlabs.org",
   },
   {
     id: "6",
-    title: "Secure Authentication Service",
-    description: "Robust, multi-factor authentication system for web applications.",
-    icon: <Lock className="w-12 h-12 text-purple-500" />,
-    fullDescription: "Our Secure Authentication Service provides a robust, multi-factor authentication system designed to enhance the security of web applications. It offers a range of authentication methods, from traditional password-based login to biometric verification and hardware tokens. With features like risk-based authentication and anomaly detection, it helps organizations protect their users' accounts from unauthorized access and potential security breaches.",
+    title: "RETRO GAME ENGINE",
+    description: "Build games that look and feel like they're from the 80s and 90s.",
+    image: "/placeholder.svg?height=400&width=600",
+    fullDescription: "Our Retro Game Engine is a comprehensive toolkit for creating games with authentic 8-bit and 16-bit aesthetics. It provides developers with the tools to build games that capture the charm and nostalgia of classic gaming eras.",
     features: [
-      "Multiple authentication factors (password, biometrics, hardware tokens)",
-      "Risk-based authentication",
-      "Single Sign-On (SSO) capabilities",
-      "User activity monitoring and anomaly detection",
-      "Integration with popular identity providers"
+      "Sprite editor with animation tools",
+      "Tile-based level editor",
+      "Chiptune music and sound effect creator",
+      "Cross-platform export (Web, Desktop, Mobile)",
+      "Built-in physics engine with retro-style limitations"
     ],
-    technologies: ["OAuth 2.0", "OpenID Connect", "FIDO2", "Node.js", "Redis"],
-    githubLink: "https://github.com/yourusername/secure-auth-service",
-    liveLink: "https://secure-auth-demo.com",
+    technologies: ["C++", "SDL2", "OpenGL", "Lua"],
+    githubLink: "https://github.com/redwoodlabs/retro-game-engine",
+    liveLink: "https://retro-game-engine-demo.redwoodlabs.org",
   },
 ]
 
 export default function ProjectPage({ params }: { params: { id: string } }) {
-  const { id } = params
-  const project = projects.find(p => p.id === id)
+  const project = projects.find(p => p.id === params.id)
 
   if (!project) {
     notFound()
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-black text-white">
+    <div className="min-h-screen flex flex-col relative overflow-hidden bg-white">
+      <RetroBinaryBackground />
+      <RetroGrid />
+      <RetroCursor />
       <NavBar />
       <main className="flex-grow">
-        <div className="max-w-4xl mx-auto px-4 py-12">
-          <div className="mb-8 flex items-center justify-center">
-            {project.icon}
-            <h1 className="text-4xl font-bold ml-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500 animate-gradient">{project.title}</h1>
-          </div>
-          <p className="text-xl text-gray-300 mb-8 text-center">{project.description}</p>
-          <div className="flex justify-center space-x-4 mb-8">
-            <Button
-              variant="outline"
-              size="lg"
-              className="bg-gray-800 hover:bg-gray-700"
-              onClick={() => window.open(project.githubLink, '_blank')}
-            >
-              <Github className="w-5 h-5 mr-2" />
-              View Repository
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="bg-gray-800 hover:bg-gray-700"
-              onClick={() => window.open(project.liveLink, '_blank')}
-            >
-              <Globe className="w-5 h-5 mr-2" />
-              Live Demo
-            </Button>
-          </div>
-          <div className="bg-gray-900 p-8 rounded-lg border border-gray-800 mb-8">
-            <h2 className="text-2xl font-semibold mb-4 text-purple-400">Project Overview</h2>
-            <p className="text-gray-300 mb-6">{project.fullDescription}</p>
-            <h3 className="text-xl font-semibold mb-2 text-purple-400">Key Features</h3>
-            <ul className="list-disc list-inside mb-6 text-gray-300">
-              {project.features.map((feature, index) => (
-                <li key={index}>{feature}</li>
-              ))}
-            </ul>
-            <h3 className="text-xl font-semibold mb-2 text-purple-400">Technologies Used</h3>
-            <div className="flex flex-wrap gap-2">
-              {project.technologies.map((tech, index) => (
-                <span key={index} className="bg-purple-900 text-purple-200 px-3 py-1 rounded-full text-sm">
-                  {tech}
-                </span>
-              ))}
+        <div className="retro-container">
+          <h1 className="retro-title text-5xl text-center mb-16">{project.title}</h1>
+
+          <div className="space-y-8">
+            <div className="retro-box">
+              <div className="relative aspect-video mb-8 overflow-hidden">
+                <Image
+                  src={project.image || "/placeholder.svg"}
+                  alt={project.title}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-lg"
+                />
+              </div>
+              <p className="retro-text text-xl mb-8">{project.fullDescription}</p>
+              <div className="flex justify-end space-x-4">
+                <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
+                  <button className="retro-button flex items-center">
+                    <Github className="w-5 h-5 mr-2" />
+                    GITHUB
+                  </button>
+                </a>
+                <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
+                  <button className="retro-button flex items-center">
+                    <Globe className="w-5 h-5 mr-2" />
+                    LIVE DEMO
+                  </button>
+                </a>
+              </div>
             </div>
-          </div>
-          <div className="text-center">
-            <Link href="/projects" className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded transition-colors duration-300">
-              Back to Projects
-            </Link>
+
+            <div className="retro-box">
+              <h2 className="retro-subtitle text-2xl mb-6">Features</h2>
+              <ul className="retro-text text-xl space-y-2">
+                {project.features.map((feature, index) => (
+                  <li key={index} className="flex items-center">
+                    <span className="mr-2">►</span> {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="retro-box">
+              <h2 className="retro-subtitle text-2xl mb-6">Technologies</h2>
+              <div className="flex flex-wrap gap-2">
+                {project.technologies.map((tech, index) => (
+                  <span key={index} className="retro-text text-xl bg-black text-white px-3 py-1 rounded">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex justify-center">
+              <Link href="/projects">
+                <button className="retro-button">
+                  BACK TO PROJECTS
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </main>

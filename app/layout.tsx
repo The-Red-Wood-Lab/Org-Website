@@ -1,12 +1,10 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import { RetroBinaryBackground, RetroGrid, RetroCursor} from '@/components/retro-decorations'
 
 export const metadata: Metadata = {
-  title: 'Tech Organization',
-  description: 'Innovative solutions for the digital age',
+  title: 'Red Wood Labs - Retro Open Source',
+  description: 'An open-source coding organization with a retro twist',
 }
 
 export default function RootLayout({
@@ -16,7 +14,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body suppressHydrationWarning className="bg-white">
+        <RetroBinaryBackground />
+        <RetroGrid />
+        <RetroCursor />
+        {children}
+      </body>
     </html>
   )
 }
