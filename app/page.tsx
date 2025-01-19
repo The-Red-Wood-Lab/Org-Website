@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import NavBar from '@/components/nav-bar'
 import Footer from '@/components/footer'
 import ProjectCard from '@/components/project-card'
@@ -51,6 +51,97 @@ const allProjects = [
   }
 ]
 
+const Preloader: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    // Simulate loading delay
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, 2500); // Match the fade-in animation timing
+
+    return () => clearTimeout(timer)
+  }, [])
+
+  return (
+    <>
+      {isLoading && (
+        <div className="preloader">
+          <div className="image-container">
+            <div className="image-top"></div>
+            <div className="image-bottom"></div>
+          </div>
+        </div>
+      )}
+      <style jsx>{`
+        /* Basic styles */
+        .preloader {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: transparent;
+          z-index: 10;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+        }
+
+        .image-container {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .image-top,
+        .image-bottom {
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: 50%;
+          background: url('https://th.bing.com/th/id/OIP.9y4sxQ7ih5VKyAcedc37qAHaEK?rs=1&pid=ImgDetMain')
+            center/cover no-repeat;
+          z-index: 20;
+        }
+
+        .image-top {
+          top: 0;
+          background-position: top center;
+          animation: slide-up 2s forwards;
+        }
+
+        .image-bottom {
+          bottom: 0;
+          background-position: bottom center;
+          animation: slide-down 2s forwards;
+        }
+
+        @keyframes slide-up {
+          0% {
+            transform: translateY(0);
+          }
+          100% {
+            transform: translateY(-100%);
+          }
+        }
+
+        @keyframes slide-down {
+          0% {
+            transform: translateY(0);
+          }
+          100% {
+            transform: translateY(100%);
+          }
+        }
+      `}</style>
+    </>
+  )
+}
+
 export default function Home() {
   const [displayedProjects, setDisplayedProjects] = useState(3)
   const [isLoading, setIsLoading] = useState(false)
@@ -65,6 +156,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen flex flex-col">
+      <Preloader />
       <NavBar />
       <div className="flex-1 max-w-7xl mx-auto px-4 py-12">
         <h1 className="text-5xl font-bold text-center mb-12">PROJECTS</h1>
@@ -81,4 +173,3 @@ export default function Home() {
     </main>
   )
 }
-
