@@ -1,10 +1,9 @@
-'use client'
 import Image from 'next/image'
 import Link from 'next/link'
 
 export default function NavBar() {
   return (
-    <nav className="bg-[#1a1a1a] text-white p-4">
+    <nav className="bg-black text-white p-4 border-b border-gray-800">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <Link href="/" className="flex items-center">
           <Image
@@ -16,10 +15,12 @@ export default function NavBar() {
           />
         </Link>
         <div className="flex gap-8">
-          <Link href="/" className="hover:text-gray-300">Home</Link>
-          <Link href="/about" className="hover:text-gray-300">About Us</Link>
-          <Link href="/contact" className="hover:text-gray-300">Contact</Link>
-          <Link href="/" className="hover:text-gray-300">Join Us</Link>
+          <Link href="/" className="hover:text-purple-500 transition-colors">Home</Link>
+          <Link href="/projects" className="hover:text-purple-500 transition-colors">Projects</Link>
+          <Link href="/about" className="hover:text-purple-500 transition-colors">About Us</Link>
+          <a href="mailto:abhimanpanwar6@gmail.com" className="hover:text-purple-500 transition-colors">Contact</a>
+          <Link href="/faq" className="hover:text-purple-500 transition-colors">FAQ</Link>
+          <Link href="/join-us" className="hover:text-purple-500 transition-colors">Join Us</Link>
         </div>
       </div>
     </nav>
