@@ -62,7 +62,7 @@ const Preloader: React.FC = () => {
           left: 0;
           width: 100%;
           height: 50%;
-          background: url(/redwood.jpeg)
+          background: url(public/redwood.jpeg)
             center/cover no-repeat;
           z-index: 20;
         }
