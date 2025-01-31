@@ -1,7 +1,11 @@
-import NavBar from '@/components/nav-bar'
-import Footer from '@/components/footer'
-import { RetroBinaryBackground, RetroGrid, RetroCursor } from '@/components/retro-decorations'
-import { Code, Cpu, Globe, Users, Zap } from 'lucide-react'
+import NavBar from "@/components/nav-bar";
+import Footer from "@/components/footer";
+import {
+  RetroBinaryBackground,
+  RetroGrid,
+  RetroCursor,
+} from "@/components/retro-decorations";
+import { Code, Cpu, Globe, Users, Zap } from "lucide-react";
 
 export default function AboutPage() {
   return (
@@ -13,18 +17,20 @@ export default function AboutPage() {
       <main className="flex-grow">
         <div className="retro-container">
           <h1 className="retro-title">ABOUT US</h1>
-          
+
           <div className="retro-box mb-8">
             <h2 className="retro-subtitle mb-4">OUR MISSION</h2>
             <p className="retro-text mb-4">
-              Red Wood Labs is an open-source organization that combines modern coding practices with retro aesthetics. 
-              We believe in the power of nostalgia and the importance of open-source collaboration.
+              Red Wood Labs is an open-source organization that combines modern
+              coding practices with retro aesthetics. We believe in the power of
+              nostalgia and the importance of open-source collaboration.
             </p>
             <p className="retro-text">
-              Our mission is to create innovative software solutions while paying homage to the golden age of personal computing.
+              Our mission is to create innovative software solutions while
+              paying homage to the golden age of personal computing.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 gap-8 mb-8">
             <div className="retro-box">
               <Cpu className="w-12 h-12 mb-4" />
@@ -41,11 +47,12 @@ export default function AboutPage() {
               <Globe className="w-12 h-12 mb-4" />
               <h3 className="retro-subtitle mb-4">GLOBAL COMMUNITY</h3>
               <p className="retro-text">
-                With members from over 50 countries, our diverse community brings together a wealth of experiences and perspectives.
+                With members from over 50 countries, our diverse community
+                brings together a wealth of experiences and perspectives.
               </p>
             </div>
           </div>
-          
+
           <div className="retro-box mb-8">
             <h2 className="retro-subtitle mb-4">OUR VALUES</h2>
             <div className="grid md:grid-cols-2 gap-8">
@@ -55,7 +62,8 @@ export default function AboutPage() {
                   OPEN SOURCE
                 </h3>
                 <p className="retro-text mb-4">
-                  We believe in the power of community-driven development and make all our projects freely available.
+                  We believe in the power of community-driven development and
+                  make all our projects freely available.
                 </p>
               </div>
               <div>
@@ -64,7 +72,8 @@ export default function AboutPage() {
                   RETRO AESTHETICS
                 </h3>
                 <p className="retro-text mb-4">
-                  We celebrate the visual and interactive styles of early computing eras in our projects.
+                  We celebrate the visual and interactive styles of early
+                  computing eras in our projects.
                 </p>
               </div>
               <div>
@@ -73,7 +82,8 @@ export default function AboutPage() {
                   INNOVATION
                 </h3>
                 <p className="retro-text mb-4">
-                  While we love the past, we&apos;re always pushing the boundaries of what&apos;s possible in software.
+                  While we love the past, we&apos;re always pushing the
+                  boundaries of what&apos;s possible in software.
                 </p>
               </div>
               <div>
@@ -82,20 +92,26 @@ export default function AboutPage() {
                   COMMUNITY
                 </h3>
                 <p className="retro-text mb-4">
-                  We foster a welcoming community for developers of all skill levels and backgrounds.
+                  We foster a welcoming community for developers of all skill
+                  levels and backgrounds.
                 </p>
               </div>
             </div>
           </div>
-          
+
           <div className="retro-box">
             <h2 className="retro-subtitle mb-4">JOIN THE RETRO REVOLUTION</h2>
             <p className="retro-text mb-4">
-              Whether you&apos;re a seasoned developer or just starting out, there&apos;s a place for you at Red Wood Labs. 
-              Join us in creating the future of software with a nostalgic twist!
+              Whether you&apos;re a seasoned developer or just starting out,
+              there&apos;s a place for you at Red Wood Labs. Join us in creating
+              the future of software with a nostalgic twist!
             </p>
             <div className="flex justify-center">
-              <a href="https://github.com/redwoodlabs" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://github.com/The-Red-Wood-Lab"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <button className="retro-button">VISIT OUR GITHUB</button>
               </a>
             </div>
@@ -104,6 +120,5 @@ export default function AboutPage() {
       </main>
       <Footer />
     </div>
-  )
+  );
 }
-
