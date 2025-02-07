@@ -47,7 +47,7 @@ export default function AboutPage() {
               <h3 className="retro-subtitle mb-4">Previous Participation</h3>
              <ul className="retro-text list-disc list-inside">
                 <li>Social Winter Summer of Code (SWOC)</li>
-                <li>GirlScript Summer of Code (GSSOC)</li>
+                <li>Hacktoberfest</li>
               </ul>
             </div>
           </div>
