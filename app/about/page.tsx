@@ -21,13 +21,10 @@ export default function AboutPage() {
           <div className="retro-box mb-8">
             <h2 className="retro-subtitle mb-4">OUR MISSION</h2>
             <p className="retro-text mb-4">
-              Red Wood Labs is an open-source organization that combines modern
-              coding practices with retro aesthetics. We believe in the power of
-              nostalgia and the importance of open-source collaboration.
+             At The Redwood Labs, we bring together individuals with diverse skills across various tech stacks to collaborate on innovative projects. Our mission is to enhance skills and foster growth through teamwork and real-world applications.
             </p>
             <p className="retro-text">
-              Our mission is to create innovative software solutions while
-              paying homage to the golden age of personal computing.
+              By working on collaborative projects, we strive to provide hands-on experience, contribute to the open-source community, and push the boundaries of technology.
             </p>
           </div>
 
@@ -39,17 +36,19 @@ export default function AboutPage() {
                 <li>React & Next.js</li>
                 <li>Node.js</li>
                 <li>Python</li>
-                <li>WebAssembly</li>
                 <li>Rust</li>
+                <li>Open CV</li>
+                <li>Yolo</li>
+                <li>Generative AI (LangChain & Lama)</li>
               </ul>
             </div>
             <div className="retro-box">
               <Globe className="w-12 h-12 mb-4" />
-              <h3 className="retro-subtitle mb-4">GLOBAL COMMUNITY</h3>
-              <p className="retro-text">
-                With members from over 50 countries, our diverse community
-                brings together a wealth of experiences and perspectives.
-              </p>
+              <h3 className="retro-subtitle mb-4">Previous Participation</h3>
+             <ul className="retro-text list-disc list-inside">
+                <li>Social Winter Summer of Code (SWOC)</li>
+                <li>GirlScript Summer of Code (GSSOC)</li>
+              </ul>
             </div>
           </div>
 
