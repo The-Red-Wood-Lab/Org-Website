@@ -14,6 +14,9 @@ export default function Footer() {
           <Link href="/faq" className="block retro-link">
             FAQ
           </Link>
+          <a href="https://www.apache.org/licenses/LICENSE-2.0.html" className="block retro-link">
+            License
+          </a>
         </div>
         <div className="space-y-2">
           <a
