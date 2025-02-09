@@ -38,7 +38,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="mt-8 text-center retro-text">
-        © 2025 RED WOOD LABS. ALL RIGHTS RESERVED.
+        © 2023 RED WOOD LABS. ALL RIGHTS RESERVED.
       </div>
     </footer>
   );

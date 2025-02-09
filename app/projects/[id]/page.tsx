@@ -9,7 +9,15 @@ import {
   RetroGrid,
   RetroCursor,
 } from "@/components/retro-decorations";
-import { Github } from "lucide-react";
+import {
+  Github,
+  Terminal,
+  Cloud,
+  TrafficCone,
+  Banknote,
+  Bolt,
+  Archive,
+} from "lucide-react";
 import { useParams } from "next/navigation";
 
 const projects = [
@@ -29,6 +37,7 @@ const projects = [
     ],
     technologies: ["Next.js", "React", "Tailwind CSS", "Node.js"],
     githubLink: "https://github.com/The-Red-Wood-Lab/ResumeCraft",
+    icon: Terminal,
   },
   {
     id: "2",
@@ -46,8 +55,82 @@ const projects = [
     ],
     technologies: ["Python", "Scikit-learn", "Pandas", "Flask", "Matplotlib"],
     githubLink: "https://github.com/The-Red-Wood-Lab/AQI-predictor",
+    icon: Cloud,
   },
-  // ... (other projects)
+  {
+    id: "3",
+    title: "Smart Traffic Flow Analyzer",
+    description:
+      "An AI-driven tool for analyzing and optimizing traffic flow using real-time data.",
+    fullDescription:
+      "Smart Traffic Flow Analyzer is an innovative solution that uses artificial intelligence to analyze and optimize traffic flow in urban areas. By processing real-time data from various sources, it provides insights and recommendations to improve traffic management and reduce congestion.",
+    features: [
+      "Real-time traffic flow analysis",
+      "Predictive modeling for traffic patterns",
+      "Integration with traffic signal systems",
+      "Congestion hotspot identification",
+      "Automated incident detection and response suggestions",
+    ],
+    technologies: ["TensorFlow", "OpenCV", "Python", "Kafka", "MongoDB"],
+    githubLink:
+      "https://github.com/The-Red-Wood-Lab/Smart-Traffic-Flow-Analyzer",
+    icon: TrafficCone,
+  },
+  {
+    id: "4",
+    title: "Credit Risk Analysis",
+    description:
+      "A machine learning-based system for assessing and predicting credit risk.",
+    fullDescription:
+      "Credit Risk Analysis is a sophisticated machine learning system designed to assess and predict credit risk for financial institutions. By analyzing various factors and historical data, it provides accurate risk assessments to aid in decision-making processes for loan approvals and credit management.",
+    features: [
+      "Multi-factor risk assessment",
+      "Real-time credit scoring",
+      "Integration with multiple data sources",
+      "Customizable risk models",
+      "Comprehensive reporting and analytics dashboard",
+    ],
+    technologies: ["Python", "XGBoost", "SQL", "Flask", "React"],
+    githubLink: "https://github.com/The-Red-Wood-Lab/credit-risk-analysis",
+    icon: Banknote,
+  },
+  {
+    id: "5",
+    title: "Micro Gas Turbine Electrical Energy Prediction",
+    description:
+      "A machine learning model for predicting electrical energy output of micro gas turbines.",
+    fullDescription:
+      "This project focuses on developing a machine learning model to accurately predict the electrical energy output of micro gas turbines. By considering various operational parameters and environmental factors, the model helps optimize energy production and improve efficiency in micro gas turbine systems.",
+    features: [
+      "Accurate energy output prediction",
+      "Real-time performance monitoring",
+      "Optimization suggestions for turbine operation",
+      "Integration with SCADA systems",
+      "Historical data analysis for trend identification",
+    ],
+    technologies: ["Python", "TensorFlow", "Pandas", "Scikit-learn", "Plotly"],
+    githubLink:
+      "https://github.com/The-Red-Wood-Lab/Micro-Gas-Turbine-electrical-energy-Prediction",
+    icon: Bolt,
+  },
+  {
+    id: "6",
+    title: "Time Capsule Website",
+    description:
+      "A web platform that allows users to create and send digital time capsules to be opened in the future.",
+    fullDescription:
+      "The Time Capsule Website is an innovative platform that enables users to create digital time capsules containing messages, images, and other media to be opened at a specified future date. This project combines web technologies with secure storage solutions to provide a unique way of preserving memories and messages for the future.",
+    features: [
+      "User-friendly interface for creating time capsules",
+      "Secure storage of time capsule contents",
+      "Scheduled release of time capsules",
+      "Support for various media types (text, images, videos)",
+      "Integration with social media for sharing and notifications",
+    ],
+    technologies: ["Next.js", "React", "MongoDB", "AWS S3", "Node.js"],
+    githubLink: "https://github.com/The-Red-Wood-Lab/time-capsule-website",
+    icon: Archive,
+  },
 ];
 
 export default function ProjectPage() {
@@ -78,6 +161,10 @@ export default function ProjectPage() {
 
           <div className="space-y-8">
             <div className="retro-box">
+              <div className="flex items-center mb-4">
+                <project.icon className="w-8 h-8 mr-4" />
+                <h2 className="retro-subtitle text-2xl">{project.title}</h2>
+              </div>
               <p className="retro-text text-xl mb-8">
                 {project.fullDescription}
               </p>
