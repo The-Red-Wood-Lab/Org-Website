@@ -145,18 +145,6 @@ export default function IdeaListPage() {
           >
             Abhiman Panwar
           </a>
-          <a
-            href="https://www.linkedin.com/in/abhinavkumarsingh1405/"
-            className="block retro-link text-xl mb-2"
-          >
-            Abhinav Kumar Singh
-          </a>
-          <a
-            href="https://www.linkedin.com/in/rohit-sharma-b90baa263/"
-            className="block retro-link text-xl mb-2"
-          >
-            Rohit Sharma
-          </a>
 
           <h2 className="retro-subtitle mb-4 mt-8">Contact</h2>
           <a
