@@ -35,6 +35,14 @@ export default function Footer() {
           >
             Linkedin
           </a>
+           <a
+            href="https://x.com/trdwoodlabs"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block retro-link"
+          >
+            Twitter(X)
+          </a>
         </div>
       </div>
       <div className="mt-8 text-center retro-text">
