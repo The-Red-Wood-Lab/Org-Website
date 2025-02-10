@@ -45,15 +45,20 @@ const projects: Record<string, Project> = {
     difficulty: "Medium to Hard",
     timeline: "175 to 350 hours (depending on feature scope and complexity)",
     mentors: [
+        {
+        name: "Abhiman Panwar",
+        role: "PROJECT ADMIN",
+        github: "https://github.com/Kroszborg",
+      },
       {
         name: "Abhinav Singh",
         role: "BACKEND",
         github: "https://github.com/Abhinavexists",
       },
       {
-        name: "Abhiman Panwar",
+        name: "Rohit Sharma",
         role: "FRONTEND",
-        github: "https://github.com/Kroszborg",
+        github: "https://github.com/rohitsharma2610",
       },
     ],
   },
@@ -82,9 +87,9 @@ const projects: Record<string, Project> = {
     timeline: "Approximately 175 hours",
     mentors: [
       {
-        name: "Sujal Rajput",
+        name: "Abhinav Singh",
         role: "BACKEND",
-        github: "https://github.com/SujalRajpt",
+        github: "https://github.com/Abhinavexists",
       },
       {
         name: "Rohit Sharma",
@@ -118,13 +123,23 @@ const projects: Record<string, Project> = {
     mentors: [
       {
         name: "Eeshan Bablani",
-        role: "BACKEND",
+        role: "PROJECT ADMIN",
         github: "https://github.com/eeshan15",
       },
       {
         name: "Abhiman Panwar",
-        role: "FRONTEND",
+        role: "PROJECT ADMIN",
         github: "https://github.com/Kroszborg",
+      },
+        {
+        name: "Abhinav Singh",
+        role: "BACKEND",
+        github: "github.com/Abhinavexists",
+      },
+      {
+        name: "Rohit Sharma",
+        role: "FRONTEND",
+        github: "https://github.com/rohitsharma2610",
       },
     ],
   },
@@ -158,19 +173,19 @@ const projects: Record<string, Project> = {
     mentors: [
       {
         name: "Eeshan Bablani",
-        role: "BACKEND",
+        role: "PROJECT ADMIN",
         github: "https://github.com/eeshan15",
+      },
+       {
+        name: "Abhiman Panwar",
+        role: "PROJECT ADMIN",
+        github: "https://github.com/Kroszborg",
       },
       {
         name: "Abhinav Singh",
         role: "BACKEND",
         github: "https://github.com/Abhinavexists",
-      },
-      {
-        name: "Abhiman Panwar",
-        role: "FRONTEND",
-        github: "https://github.com/Kroszborg",
-      },
+      },     
       {
         name: "Rohit Sharma",
         role: "FRONTEND",
@@ -208,13 +223,18 @@ const projects: Record<string, Project> = {
     mentors: [
       {
         name: "Eeshan Bablani",
-        role: "BACKEND",
+        role: "PROJECT ADMIN",
         github: "https://github.com/eeshan15",
       },
       {
         name: "Abhinav Singh",
         role: "BACKEND",
         github: "https://github.com/Abhinavexists",
+      },
+      {
+        name: "Rohit Sharma",
+        role: "FRONTEND",
+        github: "https://github.com/rohitsharma2610",
       },
     ],
   },
@@ -286,18 +306,18 @@ const projects: Record<string, Project> = {
     mentors: [
       {
         name: "Eeshan Bablani",
-        role: "BACKEND",
+        role: "PROJECT ADMIN",
         github: "https://github.com/eeshan15",
+      },
+       {
+        name: "Abhiman Panwar",
+        role: "PROJECT ADMIN",
+        github: "https://github.com/Kroszborg",
       },
       {
         name: "Abhinav Singh",
         role: "BACKEND",
         github: "https://github.com/Abhinavexists",
-      },
-      {
-        name: "Abhiman Panwar",
-        role: "FRONTEND",
-        github: "https://github.com/Kroszborg",
       },
       {
         name: "Rohit Sharma",
